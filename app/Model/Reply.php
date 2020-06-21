@@ -5,7 +5,7 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Question;
-use Like;
+use App\Model\Like;
 
 class Reply extends Model
 {
