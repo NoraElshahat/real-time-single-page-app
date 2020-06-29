@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
-
+use App\User;
 class AuthController extends Controller
 {
      /**
@@ -32,6 +33,12 @@ class AuthController extends Controller
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
+    public function signUp(){
+
+        User::create($request->all());
+        return $this->login($request);
     }
 
     /**
