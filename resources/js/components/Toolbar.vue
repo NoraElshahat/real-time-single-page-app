@@ -19,9 +19,12 @@
         Category
       </v-btn>
 
-      <v-btn>
-        Login
-      </v-btn>
+     <router-link to="/login">
+          <v-btn>
+              Login
+          </v-btn>
+     </router-link>
+     
     </v-toolbar>
   
 </template>
