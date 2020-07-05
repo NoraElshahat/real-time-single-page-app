@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Http\Controllers\AuthController;
+use App\Http\Requests\signUpRequest;
 use Illuminate\Http\Request;
 use App\User;
 class AuthController extends Controller
@@ -36,7 +37,7 @@ class AuthController extends Controller
         return response()->json(['error' => 'Unauthorized'], 401);
     }
 
-    public function signUp(Request $request){
+    public function signUp(signUpRequest $request){
 
         User::create($request->all());
         return $this->login($request);

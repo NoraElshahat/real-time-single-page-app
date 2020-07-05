@@ -18,6 +18,12 @@
     ></v-text-field>
 
     <v-btn color="green" type="submit">Login</v-btn>
+
+     <router-link to="/signup">
+          <v-btn color="blue">
+              SignUp
+          </v-btn>
+     </router-link>
     
   </v-form>
 
@@ -35,12 +41,19 @@
                 }
             }
         },
+
+        created(){
+          if(User.loggedIn()){
+            this.$router.push({name:"forum"})
+          }
+        },
         methods:{
 
             login()
             {
 
                 User.login(this.form)
+              
             }
           
         }
